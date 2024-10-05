@@ -1,0 +1,24 @@
+
+<header class="app-header">
+    <div class="left">
+      <!--<img src="path/to/logo.png" alt="Site Logo">-->
+      <p><a href="/products">FurniStore</a></p>
+    </div>
+    
+    <div class="search-container">
+        <input type="text" class="search-input" placeholder="Search...">
+        <button class="search-button">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div>
+    <div class="right">
+        <button mat-button routerLink="/admin-dash">Admin Dashboard</button>
+        <mat-menu #profileMenu="matMenu">
+            <button mat-menu-item routerLink="/products/add-product">Add New Product</button>
+            <button mat-menu-item routerLink="/products" (click="logout()")>Sign Out</button>
+        </mat-menu>
+        <button mat-icon-button [matMenuTriggerFor]="profileMenu">
+            <i class="fas fa-user"></i>
+        </button>
+    </div>
+  </header>

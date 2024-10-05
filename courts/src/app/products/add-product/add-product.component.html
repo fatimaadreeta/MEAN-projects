@@ -1,0 +1,52 @@
+<a routerLink="/admin-dash"><button mat-raised-button>Back</button></a>
+<mat-card>
+    <h2>Add Product</h2>
+    <form [formGroup]="addProduct" novalidate class="form">
+        <mat-form-field>
+            <input 
+            matInput
+            placeholder="Name of Product*"
+            type="text"
+            name="name"
+            formControlName="name"
+            required
+            minlength="3">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input 
+            matInput
+            placeholder="Paste image URL*"
+            type="text"
+            name="imageUrl"
+            formControlName="imageUrl"
+            aria-required="">
+            </mat-form-field>
+
+        <mat-form-field>
+            <textarea 
+            matInput
+            placeholder="Product description*"
+            rows="4"
+            name="description"
+            formControlName="description"
+            required>
+            </textarea>
+            <!--<mat-error *ngIf="description.invalid">Please enter a description</mat-error>-->
+        </mat-form-field>
+
+        <mat-form-field>
+            <input 
+            matInput
+            placeholder="Product price*"
+            type="number"
+            name="price"
+            formControlName="price"
+            required>
+        </mat-form-field>
+        <button
+        mat-raised-button
+        color="accent"
+        type="submit" (click)="onSubmit()">Save Product</button>
+    </form>
+</mat-card>

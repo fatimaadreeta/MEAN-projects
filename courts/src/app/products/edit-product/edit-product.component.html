@@ -1,0 +1,53 @@
+
+<mat-card >
+    <a routerLink="/admin-dash" class="button"><button mat-raised-button color="accent">Back</button></a>
+    <div class="container">
+        <h2>Edit Product</h2>
+        <form (ngSubmit) ="updateProduct()" class="form">
+                      <mat-form-field>
+                <label>Name:  <input 
+                    matInput
+                    type="text"
+                    name="Name"
+                    [(ngModel)]="product.name"
+                    minlength="3"></label>
+            </mat-form-field>
+            <mat-form-field>
+                <label>Product Image(url): 
+                    <input 
+                    matInput
+                    type="String"
+                    name="imageUrl"
+                    [(ngModel)]="product.imageUrl"></label>
+            </mat-form-field>
+    
+            <mat-form-field>
+                <label>Description: 
+                    <textarea 
+                matInput
+                placeholder={{product.description}}
+                rows="4"
+                name="description"
+                [(ngModel)]="product.description">
+                </textarea>
+                </label>
+            </mat-form-field>
+    
+            <mat-form-field>
+                <label>Price: 
+                    <input 
+                    matInput
+                    type="number"
+                    name="price"
+                    [(ngModel)]="product.price">
+                </label>
+            </mat-form-field>
+    
+            <button
+            mat-raised-button
+            color="accent"
+            type="submit">Update Product</button>
+        </form>
+
+    </div>
+</mat-card>

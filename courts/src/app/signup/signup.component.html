@@ -1,0 +1,31 @@
+<div style="text-align: center;color: rgb(35, 35, 105); margin-top: 5%;">
+  <h1 >COURTS Admin signup</h1>
+</div>
+
+<div class="signup-container">
+  <mat-card class="signup-card">
+    <form class="signup-form" (ngSubmit)="onSubmit()" [formGroup]="signupForm">
+      <div class="form-container">
+        <div class="column">
+          <div>
+            
+            <mat-form-field>
+              <input matInput placeholder="Please enter your username" type="formControlName="control formControlName="username">
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field>
+              <input matInput placeholder="Please enter your password" [type]="hide ? 'password' : 'text'" formControlName="password">
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon></button>
+          </mat-form-field>
+          </div>
+          </div>
+        </div>
+      <div class="signup-button">
+        <button mat-raised-button color="primary">Sign Up</button>
+          <button mat-raised-button color="primary" (click)="login()">Sign In</button>
+      </div>
+    </form>
+</mat-card>
+</div>
