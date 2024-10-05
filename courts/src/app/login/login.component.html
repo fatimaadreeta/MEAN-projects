@@ -1,0 +1,56 @@
+<div class="photo-container">
+  <header class="app-header">
+    <div class="left" *ngIf="userAuthenticated">
+      <button mat-button routerLink="/products">
+        Home
+      </button>
+        <button mat-button routerLink="/admin-dash">
+            Admin Dashboard
+          </button>
+      <!-- <img src="path/to/logo.png" alt="Site Logo"> -->
+      <!-- <p><a href="/products">FurniStore</a></p> -->
+    </div>
+
+    <div class="right" *ngIf="userAuthenticated">
+      <mat-menu #profileMenu="matMenu">
+        <button mat-menu-item routerLink="/login">Sign Out</button>
+      </mat-menu>
+      <button mat-icon-button [matMenuTriggerFor]="profileMenu">
+        <i class="fas fa-user"></i>
+      </button>
+      
+    </div>
+  </header>
+<div class="login-container">
+  </div>
+
+  <mat-card>
+    <form class="login-form" (ngSubmit)="admin()" [formGroup] = "loginForm">
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="Please enter your username" formControlName="username" type="text">
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          
+        
+          <mat-label>Enter your password</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>        
+        </mat-form-field>
+      </div>
+      <div class="sign-buttons">
+        <button mat-raised-button color="primary" *ngIf="userAuthenticated">Signed In</button>
+        <button mat-raised-button color="primary" type="submit" *ngIf="!userAuthenticated">Sign In</button>
+       <button mat-raised-button color="primary" (click)="signup()" *ngIf="!userAuthenticated">Sign Up</button>
+      </div>
+      <p class="center" *ngIf="!userAuthenticated"><a (click) = "alert()">Forgot Password?</a></p>
+    </form>
+</mat-card>
+</div>
+
+
+  

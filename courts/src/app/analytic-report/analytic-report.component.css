@@ -1,0 +1,38 @@
+.container{
+    margin: 2%;
+    height:80%;
+}
+
+
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+  }
+  
+  .app-header .left img {
+    width: 100px; 
+  }
+  
+  .app-header .right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .app-header .right button {
+    margin-left: 10px;
+  }
+
+  a{
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    transition: 100ms all ease-in-out;
+  }
+  
+  a:hover{
+    font-weight:500;
+    background-color: rgba(218, 195, 195, 0.5);
+  }
